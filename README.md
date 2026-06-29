@@ -1,11 +1,13 @@
-gstow - my dotfiles and config stow
-===================================
+gstow
+=====
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/gbraad-dotfiles/gstow)
 
-A cross-platform reimplementation of [GNU stow](https://www.gnu.org/software/stow/) in Go.
+A cross-platform reimplementation of [GNU stow](https://www.gnu.org/software/stow/) in Go,
+to do resource and configuration management.
 
 Works on Linux and Windows using OS-native symlink APIs — no shell commands invoked.
+
 
 ## Usage
 
@@ -64,6 +66,3 @@ action build        # local arch
 Symlinks require **Developer Mode** or Administrator rights. Directory junctions
 are used as a fallback for directory links when symlink creation is unavailable.
 
-## License
-
-MIT
