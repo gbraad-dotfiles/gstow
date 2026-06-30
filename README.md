@@ -1,18 +1,16 @@
-gstow
-=====
+Tapewrap
+========
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ducttape-infra/gstow)
 
-A cross-platform reimplementation of [GNU stow](https://www.gnu.org/software/stow/) in Go,
-to do resource and configuration management.
-
-Works on Linux and Windows using OS-native symlink APIs — no shell commands invoked.
+A cross-platform resource and configuration management tool, compatible with GNU stow if called
+with `stow` as name.
 
 
 ## Usage
 
 ```sh
-gstow [-D] [-R] [-t TARGET] [-v] [-n] PACKAGE...
+stow [-D] [-R] [-t TARGET] [-v] [-n] PACKAGE...
 ```
 
 | Flag | Description |
@@ -28,22 +26,22 @@ gstow [-D] [-R] [-t TARGET] [-v] [-n] PACKAGE...
 
 ### Stow zsh and vim packages to the parent directory
 ```sh
-cd ~/.dotfiles && gstow zsh vim
+cd ~/.dotfiles && stow zsh vim
 ```
 
 # Stow to an explicit target
 ```sh
-gstow -t ~ zsh vim
+stow -t ~ zsh vim
 ```
 
 ### Unstow
 ```sh
-gstow -D zsh
+stow -D zsh
 ```
 
 ### Restow (useful after adding new files to a package)
 ```sh
-gstow -R zsh vim
+stow -R zsh vim
 ```
 
 

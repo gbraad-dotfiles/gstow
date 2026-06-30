@@ -1,8 +1,8 @@
-# gstow
+# Tapewrap
 
 ### info
 
-Build actions for [gstow](https://github.com/gbraad-dotfiles/gstow), a cross-platform
+Build actions for [`tapewrap`](https://github.com/ducttape-infra/tapewrap), a cross-platform
 GNU stow replacement written in Go.
 
 ### config

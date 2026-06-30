@@ -1,15 +1,15 @@
 version: 2
 
-project_name: gstow
+project_name: tapewrap
 
 before:
   hooks:
     - go mod tidy
 
 builds:
-  - id: gstow
-    main: ./cmd/gstow
-    binary: gstow
+  - id: tapewrap
+    main: ./cmd/tapewrap
+    binary: tapewrap
     env:
       - CGO_ENABLED=0
     goos:
@@ -20,7 +20,7 @@ builds:
       - amd64
       - arm64
     ldflags:
-      - -s -w -X main.version={{ .Version }} -X main.commit={{ .Commit }}
+      - -s -w -X main.version={{ .Version }}
 
 archives:
   - id: binary
@@ -29,14 +29,14 @@ archives:
 
 nfpms:
   - id: packages
-    package_name: gstow
+    package_name: tapewrap
     file_name_template: "{{ .ConventionalFileName }}"
     vendor: Ducttape Infra
     homepage: https://github.com/ducttape-infra/gstow
     maintainer: Ducttape Infra <developers@ducttape-infra.org>
     description: |-
-      Manage symlink farms for dotfiles.
-      GNU Stow-compatible symlink manager with support for Windows junctions.
+      GNU Stow-compatible symlink manager.
+      Invoke as "stow" for GNU Stow compatible mode.
     license: MIT
     formats:
       - apk
@@ -45,8 +45,8 @@ nfpms:
     bindir: /usr/sbin
     contents:
       - src: ./LICENSE
-        dst: /usr/share/licenses/gstow/LICENSE
-      - src: /usr/sbin/gstow
+        dst: /usr/share/licenses/tapewrap/LICENSE
+      - src: /usr/sbin/tapewrap
         dst: /usr/sbin/stow
         type: symlink
 
